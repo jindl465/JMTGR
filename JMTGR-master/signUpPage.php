@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -30,7 +30,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">JMTGR</a>
+        <?php echo "<a class=navbar-brand js-scroll-trigger href=index.php>JMTGR</a>"; ?>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -38,7 +38,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">LogIn</a>
+              <?php echo "<a class=nav-link js-scroll-trigger href=main.php>Login</a>"; ?>
             </li>
           </ul>
         </div>
@@ -55,95 +55,34 @@
     </header>
 
 
-    <!-- Portfolio Grid -->
-    <section class="bg-light" id="portfolio">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">음식 리스트</h2>
-          </div>
+    <!-- signup -->
+    <section class="bg-light" id="signup">
+      <form action="./signUp.php" method="post">
+        <div>
+          <label for="id"> ID </label>
+          <input type="text" name="id">
         </div>
-        <div class="row">
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" href="#page-top">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/korean.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>한식</h4>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" href="#page-top">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/japan.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>일식</h4>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" href="#page-top">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/china.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>중식</h4>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" href="#page-top">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/chicken.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>치킨</h4>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" href="#page-top">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/pizza.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>피자</h4>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" href="#page-top">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/cafe.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>기타</h4>
-            </div>
-          </div>
+        <div>
+          <label for="pw"> PW </label>
+          <input type="password" name="pw"/>
         </div>
-      </div>
+        <div>
+          <label for="pwc"> pwc </label>
+          <input type="password" name="pwc"/>
+        </div>
+
+        <div>
+          <label for="name"> Name </label>
+          <input type="text" name="name"/>
+        </div>
+        <div>
+          <label for="email"> E-mail </label>
+          <input type="text" name="email"/>
+        </div>
+        <div class="button">
+          <input type="submit" value="submit"/>
+        </div>
+      </form>
     </section>
 
     <!-- Footer -->
