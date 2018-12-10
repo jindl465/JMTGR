@@ -1,6 +1,6 @@
 <?php
 session_start();
-header("Content-Type: text/html; charset=utf-8"); // utf-8인코딩
+#header("Content-Type: text/html; charset=utf-8"); // utf-8인코딩
 
 $db_host = "localhost";
 $db_user = "caujmtgr";
