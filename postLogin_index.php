@@ -38,7 +38,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">LogIn</a>
+              <a class="nav-link js-scroll-trigger" href="#portfolio">음식리스트</a>"; ?>
+            </li>
+            <li class="nav-item">
+              <?php session_start(); $username = $_SESSION['name']; echo "<a class=nav-link js-scroll-trigger> [ $username ]님</a>"?>
+            </li>
+            <li class="nav-item">
+              <?php echo "<a class=nav-link js-scroll-trigger href=logout.php>Logout</a>"; ?>
             </li>
           </ul>
         </div>
@@ -65,7 +71,7 @@
         </div>
         <div class="row">
           <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" href="#page-top">
+            <a class="portfolio-link" href="koreanlist.php">
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
