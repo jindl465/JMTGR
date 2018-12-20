@@ -41,6 +41,28 @@
     .star-input>.input>label[for="p4"]{width:120px;z-index:2;}
     .star-input>.input>label[for="p5"]{width:150px;z-index:1;}
     .star-input>output{display:inline-block;width:60px; font-size:18px;text-align:right; vertical-align:middle;}
+    #review>.container {
+      width: 100%;
+      height: 70%;
+      margin: 40px auto;
+    }
+    #review>.outer {
+      display: table;
+      width: 100%;
+      height: 100%;
+    }
+    #review>.inner {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+    #review>.centered {
+      position: relative;
+      display: inline-block;
+
+      width: 100%;
+      padding: 1em;
+    }
     </style>
 
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=l1b8mkrqqq"></script>
@@ -147,50 +169,78 @@
     <!-- /.container -->
   </section>
 
-  <div class="review">
-    <div class="col-md-6 col-md-offset-3 form-container">
-        <h2>리뷰</h2>
-        <p>
-            ---------------------------------------------------------------------------------
-        </p>
-        <form role="form" method="post" id="reused_form" action="review.php">
-          <div class="row">
-            <span class="star-input">
-            	<span class="input">
-                	<input type="radio" name="star-input" value="1" id="p1">
-                	<label for="p1">1</label>
-                	<input type="radio" name="star-input" value="2" id="p2">
-                	<label for="p2">2</label>
-                	<input type="radio" name="star-input" value="3" id="p3">
-                	<label for="p3">3</label>
-                	<input type="radio" name="star-input" value="4" id="p4">
-                	<label for="p4">4</label>
-                	<input type="radio" name="star-input" value="5" id="p5">
-                	<label for="p5">5</label>
-              	</span>
-              	<output for="star-input"><b>0</b>점</output>
-            </span>
 
+<section id="review">
+  <div class="container">
+    <div class="outer">
+      <div class="inner">
+        <div class="centered">
+        <div class="review" >
+            <div class="col-md-6 col-md-offset-3 form-container">
+              <h2>리뷰</h2>
+              <p>
+                ---------------------------------------------------------------------------------
+              </p>
+              <form role="form" method="post" id="reused_form" action="review.php">
+                <input type='hidden' name='restaurant-id' value=<?=$rid?>>
+                <input type='hidden' name='go-back' value=<?=$_SERVER['REQUEST_URI'];?>>
+                <div class="row">
+                  <span class="star-input">
+            	       <span class="input">
+                	 <input type="radio" name="star-input" value="1" id="p1">
+                	 <label for="p1">1</label>
+                	 <input type="radio" name="star-input" value="2" id="p2">
+                	 <label for="p2">2</label>
+                	 <input type="radio" name="star-input" value="3" id="p3">
+                	 <label for="p3">3</label>
+                	 <input type="radio" name="star-input" value="4" id="p4">
+                	 <label for="p4">4</label>
+                	 <input type="radio" name="star-input" value="5" id="p5">
+                	 <label for="p5">5</label>
+              	      </span>
+              	   <output for="star-input"><b>0</b>점</output>
 
-          </div>
-          <div class="row">
-              <div class="col-sm-12 form-group">
-                  <textarea class="form-control" type="textarea" name="comments" id="comments" placeholder="리뷰를 입력하세요" maxlength="6000" rows="7"></textarea>
+                  </span>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 form-group">
+                    <textarea class="form-control" type="textarea" name="comments" id="comments" placeholder="리뷰를 입력하세요" maxlength="15000" rows="7"></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="submitbutton">
+                    <button type="submit"> 완료 </button>
+                  </div>
+                </div>
+              </form>
+
+              <div class="row">
+                <div class="mainreview">
+                  <?php
+                  $table = "SELECT * FROM user_review";
+                  $result = $connect->query($table);
+
+                  echo "<table id=\"T\"> 리뷰내용 <tr> </tr>";
+                      while($row = mysqli_fetch_array($result)) {
+                        echo "<tr>";
+                        echo "<td>".$row['uid']."</td>";
+                        echo "<td>".$row['star']."</td>";
+                        echo "<td>".$row['day']."</td>";
+                        echo "<td>".$row['comment']."</td>";
+                        echo "</tr>";
+                      }
+                    echo "</table>";
+                   ?>
+                </div>
               </div>
-          </div>
-          <div class="row">
-            <div class="submitbutton">
-              <button type="submit"> 완료 </button>
             </div>
           </div>
-
-        </form>
+        </div>
+      </div>
+      </div>
     </div>
-  </div>
-
-
+  </section>
     <?php
-      include 'review.php';
       include('footer.html');
     ?>
 

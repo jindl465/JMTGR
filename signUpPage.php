@@ -37,25 +37,25 @@
     <section class="bg-light" id="signup">
       <form action="./signUp.php" method="post">
         <div>
-          <label for="id"> ID </label>
-          <input type="text" name="id">
+          <label for="input_id"> ID </label>
+          <input type="text" name="input_id">
         </div>
         <div>
-          <label for="pw"> PW </label>
-          <input type="password" name="pw"/>
+          <label for="input_pw"> PW </label>
+          <input type="password" name="input_pw"/>
         </div>
         <div>
-          <label for="pwc"> pwc </label>
-          <input type="password" name="pwc"/>
+          <label for="input_pwc"> pwc </label>
+          <input type="password" name="input_pwc"/>
         </div>
 
         <div>
-          <label for="name"> Name </label>
-          <input type="text" name="name"/>
+          <label for="input_name"> Name </label>
+          <input type="text" name="input_name"/>
         </div>
         <div>
-          <label for="email"> E-mail </label>
-          <input type="text" name="email"/>
+          <label for="input_email"> E-mail </label>
+          <input type="text" name="input_email"/>
         </div>
         <div class="button">
           <input type="submit" value="submit"/>

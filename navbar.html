@@ -2,7 +2,14 @@
 
 
 
+
+
 <body>
+<style>
+  .navbar > .container{
+    background:rgba(0,0,0,0.5);
+}
+</style>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
   <div class="container">
     <a class="navbar-brand js-scroll-trigger" href=/index.php#page-top>JMTGR</a>
@@ -15,9 +22,16 @@
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href=/index.php#portfolio>음식리스트</a>
         </li>
-        <li class="nav-item">
-          <a class=nav-link js-scroll-trigger href=main.php>Login</a>
-        </li>
+<?php
+   session_start();
+   $username = $_SESSION['name'];
+   if(isset($username)){
+       echo "<li class='nav-item'><a class=nav-link js-scroll-trigger> [ $username ]님</a> </li>";
+       echo '<li class="nav-item"><a class=nav-link js-scroll-trigger href=logout.php>Logout</a></li>';
+   }else{
+       echo '<li class="nav-item"> <a class=nav-link js-scroll-trigger href=main.php>Login</a></li>';
+   }
+?>
       </ul>
     </div>
   </div>

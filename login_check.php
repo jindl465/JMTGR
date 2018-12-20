@@ -25,8 +25,7 @@ if($result->num_rows==1){
 
     if(isset($_SESSION['id'])){
       $_SESSION['name']=$row['name'];
-      echo "<script>alert('".$row['name']."님 로그인 성공');location.replace('./postLogin_index.php');</script>";
-      //header('Location: ./postLogin_index.php');
+      echo "<script>alert('".$row['name']."님 로그인 성공');location.replace('./index.php');</script>";
     }
     else{
       echo "<script>alert(\"세션 저장 실패.\");history.back();</script>";
